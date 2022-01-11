@@ -1,0 +1,23 @@
+<h2><a href = "{% url 'member-create' %}">+</a></h1>
+<h1>Team members</h1>
+<h3>You have {{members.count}} team members.</h3>
+
+<table>
+    {% for member in members %}
+    <tr>
+        <td>
+            {{member.name}}
+            {% if member.admin %}
+            (admin)
+            {% endif %}
+        </td>
+        <td><a href = "{% url 'member-update' member.id %}">Edit</a></td>
+    </tr>
+    <tr>
+        <td>{{member.phone}}</td>
+    </tr>
+    <tr>
+        <td>{{member.email}}</td>
+    </tr>
+    {% endfor %}
+</table>

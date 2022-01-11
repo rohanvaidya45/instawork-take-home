@@ -1,0 +1,9 @@
+<h3>Edit a team member</h3>
+<h4>Edit contact info, location and role.</h4>
+
+<form method = "POST" action ="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type = "submit" value = "Save">
+</form>
+<td><a href = "{% url 'member-delete' member.id %}">Delete</a></td>
